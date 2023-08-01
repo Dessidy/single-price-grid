@@ -1,0 +1,188 @@
+/* imported font */
+@font-face {
+    font-family: Karla;
+    src: url(Karla-VariableFont_wght.ttf);
+}
+
+/* =========================================================== */
+
+/* root variables */
+:root {
+    /* colors */
+    --clr-Cyan: hsl(179, 62%, 43%);
+    --clr-light-Cyan: hsla(179, 62%, 43%, 0.705);
+    --clr-Bright-Yellow: hsl(71, 73%, 54%);
+    --clr-Light-Gray: hsl(204, 43%, 93%);
+    --clr-Grayish-Blue: hsl(218, 22%, 67%);
+
+    /* font weight */
+    --fw-small: 400;
+    --fw-big: 700;
+}
+
+/* ============================================================== */
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+	padding: 0;
+	box-sizing: border box;
+	word-wrap: break-word;		
+}
+
+/* ======================================================================== */
+
+/* main containers */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    font-size: 16px;
+    font-family: karla;
+    font-weight: var(--fw-small);
+    padding:2rem;
+
+    background: var(--clr-Light-Gray);
+}
+/* ------------------------------------------- */
+
+body .grid_container {
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+/* ----------------------------------------------- */
+
+.grid .content_container {
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+    text-align: left;
+    color: var(--clr-Light-Gray);
+}
+
+/* ================================================================= */
+
+/* Articles */
+.grid .heading_article {
+    background: #fff;
+}
+
+.heading_article h1.heading {
+    color: var(--clr-Cyan);
+    font-weight: var(--fw-big);
+}
+
+.heading_article h2.time_period_heading {
+    color: var(--clr-Bright-Yellow);
+    font-size: 1rem;
+    font-weight: var(--fw-big);
+}
+
+.heading_article p.about {
+    color: var(--clr-Grayish-Blue);
+    font-size: .8rem;
+    font-weight: var(--fw-big);
+    line-height: 2;
+}
+
+/* -------------------------------------- */
+
+.grid .left_article {
+    background: var(--clr-Cyan);
+}
+
+.left_article .price_container {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+.left_article .price_container .price {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: var(--fw-big);
+}
+
+.left_article .link_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--clr-Bright-Yellow);
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: .5rem;
+}
+
+.left_article .btn {
+    text-decoration: none;
+    color: #fff;
+    font-weight: var(--fw-big);
+    cursor: pointer;
+    transition: all ease-in-out 250ms;
+}
+
+.left_article .link_container:hover {
+    border: .8px solid var(--clr-Bright-Yellow);
+    background: inherit;
+}
+
+/* ----------------------------------------- */
+
+.grid .right_article {
+    background: var(--clr-light-Cyan);
+    padding-right: 5rem;
+}
+
+.right_article .sub_heading {
+    color: #fff;
+}
+
+.right_article p.review {
+    font-size: .8rem;
+    line-height: 2;
+    font-weight: var(--fw-big);
+}
+
+@media (min-width: 750px) {
+
+    .grid_container {
+        min-width: 650px;
+        max-width: 650px;
+    }
+
+    .grid_container .grid .heading_article h1.heading {
+        font-size: 1.4rem;
+    }
+
+    .grid_container .grid .heading_article h2.time_period_heading,
+    .grid_container .grid .heading_article p.about {
+        font-size: 1.05rem;
+    }
+
+    .grid_container .media_flex_row {
+        display: flex;
+    }
+
+    .media_flex_row .grid {
+        width: 50%;
+    }
+
+    .media_flex_row .grid article {
+        padding: 3rem 2rem;
+    }
+
+    .media_flex_row .grid .right_article {
+        padding: 3rem 3rem;
+    }
+
+    .media_flex_row .grid .right_article p.review {
+        font-size: .81rem;
+        padding-right: 2rem;
+    }
+}
